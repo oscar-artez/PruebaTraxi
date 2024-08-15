@@ -1,46 +1,38 @@
-
-import HomeProvider from '@/components/HomeProvider';
-import CarList from './Vehicles/page';
-import { MapRoute } from "./models/types";
-import dynamic from 'next/dynamic';
-import dummyData from '../assets/mapRoutesMock.json'; 
-export default async function Home() {
-
-  const exampleRoutes: MapRoute[] = [
+[
     {
-      route_title: "R01 TLALNEPANTLA",
-      geojson: {
-        type: "FeatureCollection",
-        features: [
+      "route_title": "R01 TLALNEPANTLA",
+      "geojson": {
+        "type": "FeatureCollection",
+        "features": [
           {
-            type: "Feature",
-            geometry: {
-              type: "Point",
-              coordinates: [-99.213625, 19.542187]
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-99.213625, 19.542187]
             },
-            properties: {
-              name: "RODEO STA FE (WALMART PIRULES)",
-              address: "",
-              type: "in"
+            "properties": {
+              "name": "RODEO STA FE (WALMART PIRULES)",
+              "address": "",
+              "type": "in"
             }
           },
           {
-            type: "Feature",
-            geometry: {
-              type: "Point",
-              coordinates: [-99.203852, 19.42779]
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-99.203852, 19.42779]
             },
-            properties: {
-              name: "TRAXI MONTES URALES",
-              address: "",
-              type: "out"
+            "properties": {
+              "name": "TRAXI MONTES URALES",
+              "address": "",
+              "type": "out"
             }
           },
           {
-            type: "Feature",
-            geometry: {
-              type: "LineString",
-              coordinates: [
+            "type": "Feature",
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
                 [-99.21365, 19.5422],
                 [-99.21323, 19.54283],
                 [-99.21301, 19.54324],
@@ -211,62 +203,48 @@ export default async function Home() {
                 [-99.20395, 19.42767]
               ]
             },
-            properties: {
-              name: null,
-              address: null,
-              type: "LineString"
+            "properties": {
+              "name": null,
+              "address": null,
+              "type": "LineString"
             }
           }
         ]
       },
-      route_id: "64cc913d907d69987cb1546b"
+      "route_id": "64cc913d907d69987cb1546b"
     },
     {
-      route_title: "R02 CIVAC",
-      geojson: {
-        type: "FeatureCollection",
-        features: [
+      "route_title": "R02 CIVAC",
+
+      "geojson": {
+        "type": "FeatureCollection",
+        "features": [
           {
-            type: "Feature",
-            geometry: {
-              type: "Point",
-              coordinates: [-99.313625, 19.56299]
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-99.313625, 19.56299]
             },
-            properties: {
-              name: "Kibo",
-              address: "",
-              type: "in"
+            "properties": {
+              "name": "Kibo",
+              "address": "",
+              "type": "in"
             }
           },
           {
-            type: "Feature",
-            geometry: {
-              type: "Point",
-              coordinates: [-99.403852, 19.42779]
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-99.403852, 19.42779]
             },
-            properties: {
-              name: "Sodexo",
-              address: "",
-              type: "out"
+            "properties": {
+              "name": "Sodexo",
+              "address": "",
+              "type": "out"
             }
           }
         ]
       },
-      route_id: "64cc913d907d69987cb15999"
+      "route_id": "64cc913d907d69987cb15999"
     }
-  ];
-  ;
-  const LazyMapContainer= dynamic(() => import('../components/Map'), { ssr: false })
-
-  return (
-    <HomeProvider mapRoutes={exampleRoutes}>
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <section className="w-full">
-        <LazyMapContainer/>
-      </section>
-      <CarList />
-    </main>
-    </HomeProvider>
-
-  );
-}
+  ]
